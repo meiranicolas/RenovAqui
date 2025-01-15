@@ -1,0 +1,16 @@
+.nav-item {
+    list-style: none;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.nav-item a:hover{
+    color: #64a567;
+}
+
+

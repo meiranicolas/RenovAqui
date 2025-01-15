@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    padding: 20px 60px;
+    background-color: #000000;
+    font-family: Arial, sans-serif;
+}
+
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.nav img {
+    max-width: 200px;
+}
+
+.navItems {
+    display: flex;
+    justify-content: space-evenly;
+    width: 550px;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+.navItems .logout-button {
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    border: none;
+    background: none;
+    transition: color 0.3s ease;
+}
+
+.navItems .logout-button:hover {
+    color: #64a567;
+}
+
+.menu-button {
+    background-color: #64a567;
+    color: white;
+    border: none;
+    padding: 13px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 10px;
+    display: none;
+    font-size: 20px;
+}
+
+.menu-button:hover {
+    background-color: #4d7e4f;
+    transition: all 0.6s;
+    scale: 1.10;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    background-color: #f1f1f1;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    transform: translateX(100%);
+    border-radius: 3px;
+}
+
+.sidebar.open {
+    animation: slideIn 0.3s ease forwards;
+}
+
+.sidebar.close {
+    animation: slideOut 0.3s ease forwards;
+}
+
+.sidebar .button.logout-button {
+    background-color: #64a567;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px 0;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar .button.logout-button:hover {
+    background-color: #4d7e4f;
+}
+
+@media (max-width: 900px) {
+    .nav img {
+        max-width: 90px;
+        height: 80px;
+    }
+
+    .menu-button {
+        display: block;
+        padding: 8px;
+        font-size: 15px;
+        width: 40px;
+    }
+
+    .navItems {
+        display: none;
+    }
+
+    .fechar {
+        background-color: #64a567;
+        color: #E6E6E6;
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        transition: all 0.6s;
+        font-size: 20px;
+        border: none;
+    }
+
+    .fechar:hover {
+        background-color: #4d7e4f;
+        transition: all 0.6s;
+        scale: 1.10;
+    }
+
+    .logut{
+        font-size: 20px;
+        color: #5f5f5f;
+        background-color: #f3f3f3;
+        padding: 15px;
+        margin-bottom: 1px;
+        min-width: 100%;
+        transition: all 0.6s;
+        text-decoration: none;
+        border-radius: 10px;
+        margin-bottom: 16px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        text-align: left;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+
+    .logut:hover{
+        transition: all 0.6s;
+        scale: 1.02;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar.open {
+        background-color: #ffffff;
+        display: flex;
+        align-items: baseline;
+    }
+
+    .sidebar.open a {
+        font-size: 20px;
+        text-decoration: none;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        color: #5f5f5f;
+        background-color: #f3f3f3;
+        padding: 15px;
+        margin-bottom: 1px;
+        min-width: 100%;
+        transition: all 0.6s;
+    }
+
+    .sidebar.open a:hover {
+        transition: all 0.6s;
+        scale: 1.02;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
